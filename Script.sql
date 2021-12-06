@@ -38,6 +38,7 @@ CREATE TABLE Utilisateurs(
 
 CREATE TABLE MenusDuJour(
    IdMenuDuJour INT AUTO_INCREMENT PRIMARY KEY,
+    IdMenu INT,
    DateDuJour DATE NOT NULL
   
 )ENGINE=InnoDB;
@@ -62,13 +63,6 @@ CREATE TABLE Reglements(
   
 )ENGINE=InnoDB;
 
-CREATE TABLE Compositions(
-   IdComposition INT AUTO_INCREMENT PRIMARY KEY,
-   IdMenu INT,
-   IdMenuDuJour INT
-  
-   
-)ENGINE=InnoDB;
 
 
   
@@ -85,6 +79,5 @@ ADD CONSTRAINT FK_Reservation_Menus FOREIGN KEY(IdMenu) REFERENCES Menus(IdMenu)
   ADD CONSTRAINT FK_Reglements_TypePaiements FOREIGN KEY(IdTypePaiement) REFERENCES TypePaiements(IdTypePaiement);
 
 
-ALTER TABLE Compositions
-ADD CONSTRAINT FK_Compositions_Menus FOREIGN KEY(IdMenu) REFERENCES Menus(IdMenu),
-ADD CONSTRAINT FK_Compositions_MenusDuJour FOREIGN KEY(IdMenuDuJour) REFERENCES MenusDuJour(IdMenuDuJour);
+ALTER TABLE MenusDuJour
+ADD CONSTRAINT FK_MenusDuJour_Menus FOREIGN KEY(IdMenu) REFERENCES Menus(IdMenu);
