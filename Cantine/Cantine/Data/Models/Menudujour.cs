@@ -11,6 +11,6 @@ namespace Cantine.Data.Models
         public int? IdMenu { get; set; }
         public DateTime DateDuJour { get; set; }
 
-        public virtual Menu IdMenuNavigation { get; set; }
+        public virtual Menus IdMenuNavigation { get; set; }
     }
 }
