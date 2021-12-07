@@ -2082,23 +2082,39 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\59011-07-10\\.nuget\\packages\\": {},
+<<<<<<< HEAD
+    "C:\\Users\\59011-07-02\\.nuget\\packages\\": {},
+=======
+    "C:\\Users\\59011-07-03\\.nuget\\packages\\": {},
+>>>>>>> 2ca575444b5cd38efd80b4ca591b247f0162fb84
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\59011-07-10\\Documents\\Cantine\\Cantine\\Cantine\\Cantine.csproj",
+<<<<<<< HEAD
+      "projectUniqueName": "C:\\Users\\59011-07-02\\Documents\\Cantine\\Cantine\\Cantine\\Cantine.csproj",
       "projectName": "Cantine",
-      "projectPath": "C:\\Users\\59011-07-10\\Documents\\Cantine\\Cantine\\Cantine\\Cantine.csproj",
-      "packagesPath": "C:\\Users\\59011-07-10\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\59011-07-10\\Documents\\Cantine\\Cantine\\Cantine\\obj\\",
+      "projectPath": "C:\\Users\\59011-07-02\\Documents\\Cantine\\Cantine\\Cantine\\Cantine.csproj",
+      "packagesPath": "C:\\Users\\59011-07-02\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\59011-07-02\\Documents\\Cantine\\Cantine\\Cantine\\obj\\",
+=======
+      "projectUniqueName": "C:\\Users\\59011-07-03\\Documents\\Cantine\\Cantine\\Cantine\\Cantine.csproj",
+      "projectName": "Cantine",
+      "projectPath": "C:\\Users\\59011-07-03\\Documents\\Cantine\\Cantine\\Cantine\\Cantine.csproj",
+      "packagesPath": "C:\\Users\\59011-07-03\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\59011-07-03\\Documents\\Cantine\\Cantine\\Cantine\\obj\\",
+>>>>>>> 2ca575444b5cd38efd80b4ca591b247f0162fb84
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\59011-07-10\\AppData\\Roaming\\NuGet\\NuGet.Config",
+<<<<<<< HEAD
+        "C:\\Users\\59011-07-02\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+        "C:\\Users\\59011-07-03\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> 2ca575444b5cd38efd80b4ca591b247f0162fb84
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -2182,7 +2198,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
       }
     }
   },

@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace Cantine.Data.Models
 {
-    public partial class Menudujour
+    public partial class MenuDuJour
     {
         public int IdMenuDuJour { get; set; }
         public int? IdMenu { get; set; }

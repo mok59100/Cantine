@@ -10,7 +10,7 @@ namespace Cantine.Data.Models
         public Reservations()
         {
             Reglements = new HashSet<Reglement>();
-            Reservationsmenus = new HashSet<Reservationsmenu>();
+            Reservationsmenus = new HashSet<ReservationsMenu>();
         }
 
         public int IdReservation { get; set; }
@@ -20,6 +20,6 @@ namespace Cantine.Data.Models
 
         public virtual Eleve IdUtilisateurNavigation { get; set; }
         public virtual ICollection<Reglement> Reglements { get; set; }
-        public virtual ICollection<Reservationsmenu> Reservationsmenus { get; set; }
+        public virtual ICollection<ReservationsMenu> Reservationsmenus { get; set; }
     }
 }
