@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Cantine.Data.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,48 +7,52 @@ using System.Threading.Tasks;
 
 namespace Cantine.Data.Services
 {
-    class MenuDuJourServices
+    public class MenuDuJourServices
     {
 
 
-        private readonly MyDbContext _context;
+        private readonly cantineContext _context;
 
-        public NomServiceServices(MyDbContext context)
+        public MenuDuJourServices( cantineContext context)
         {
             _context = context;
         }
 
-        public void AddnomModel(nomModel obj)
+        public void AddMenuDuJour(MenuDuJour obj)
         {
             if (obj == null)
             {
                 throw new ArgumentNullException(nameof(obj));
             }
-            _context.NomService.Add(obj);
+            _context.MenuDuJour.Add(obj);
             _context.SaveChanges();
         }
 
-        public void DeletenomModel(nomModel obj)
+        public void DeleteMenuDuJour(MenuDuJour obj)
         {
             if (obj == null)
             {
                 throw new ArgumentNullException(nameof(obj));
             }
-            _context.NomService.Remove(obj);
+            _context.MenuDuJour.Remove(obj);
             _context.SaveChanges();
         }
 
-        public IEnumerable<nomModel> GetAllNomService()
+        public IEnumerable<MenuDuJour> GetAllMenuDuJour()
         {
-            return _context.NomService.ToList();
+            return _context.MenuDuJour.ToList();
         }
 
-        public nomModel GetnomModelById(int id)
+        public MenuDuJour GetMenuDuJourById(int id)
         {
-            return _context.NomService.FirstOrDefault(obj => obj.Id == id);
+            return _context.MenuDuJour.FirstOrDefault(obj => obj.IdMenuDuJour == id);
+        }
+        public MenuDuJour GetMenuDuJourByDateDuJour(DateTime DateDuJour)
+        {
+            return _context.MenuDuJour.FirstOrDefault(obj => obj.DateTime == DateDuJour);
         }
 
-        public void UpdatenomModel(nomModel obj)
+        public void UpdateMenuDuJour(MenuDuJour obj)
         {
             _context.SaveChanges();
         }
