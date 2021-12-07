@@ -47,13 +47,13 @@ namespace Cantine.Data.Services
             return _context.Reservations.FirstOrDefault(obj => obj.IdReservation == id);
         }
 
-        public IEnumerable<Reservations> GetReservationsByEleves(int idEleve)
+        public IEnumerable<Reservation> GetReservationsByEleves(int idEleve)
         {
 
             return _context.Reservations.ToList(o => o.IdEleve==idEleve);
         }
 
-        public void UpdateReservations(Reservations obj)
+        public void UpdateReservations(Reservation obj)
         {
             _context.SaveChanges();
         }

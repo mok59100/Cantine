@@ -9,14 +9,14 @@ using System.Threading.Tasks;
 
 namespace Cantine.Data.Profiles
 {
-    class TypePaiementsProfile:Profile
+    class TypesPaiementsProfile:Profile
 
     {
 
-        public TypePaiementsProfile()
+        public TypesPaiementsProfile()
         {
-            CreateMap<TypePaiement, TypePaiementsDTOIn>();
-            CreateMap<TypePaiementsDTOIn, TypePaiement>();
+            CreateMap<TypePaiement, TypesPaiementsDTOIn>();
+            CreateMap<TypesPaiementsDTOIn, TypePaiement>();
 
 
 

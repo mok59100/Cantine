@@ -21,7 +21,7 @@ namespace Cantine.Data.Dtos
         public partial class ReglementsDTOOutUtilisateur
         {
             
-            public TypePaiementsDTOIn TypePaiements { get; set; }
+            public TypesPaiementsDTOIn TypePaiements { get; set; }
             public ReservationsDTOOutReglement ReservationsAvecReglement { get; set; }
             public DateTime DateReglement { get; set; }
         }
@@ -30,7 +30,7 @@ namespace Cantine.Data.Dtos
         {
 
             public ElevesDTOOut Eleves { get; set; }
-            public TypePaiementsDTOIn TypePaiements { get; set; }
+            public TypesPaiementsDTOIn TypePaiements { get; set; }
             public ReservationsDTOOutReglement ReservationsAvecReglement { get; set; }
             public DateTime DateReglement { get; set; }
         }

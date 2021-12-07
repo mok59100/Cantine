@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Cantine.Data.Dtos
 {
-    class TypePaiementsDTOIn
+    class TypesPaiementsDTOIn
     {
         public string LibelleTypePaiement { get; set; }
     }

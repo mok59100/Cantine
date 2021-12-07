@@ -20,7 +20,7 @@ namespace Cantine.Data
 
         public virtual DbSet<Eleve> Eleves { get; set; }
         public virtual DbSet<Menu> Menus { get; set; }
-        public virtual DbSet<MenuDuJour> MenuDuJour { get; set; }
+        public virtual DbSet<MenuDuJour> MenusDuJour { get; set; }
         public virtual DbSet<Reglement> Reglements { get; set; }
         public virtual DbSet<Reservation> Reservations { get; set; }
         public virtual DbSet<ReservationMenu> ReservationsMenus { get; set; }

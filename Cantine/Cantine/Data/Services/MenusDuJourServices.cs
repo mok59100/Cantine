@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace Cantine.Data.Services
 {
-    public class MenuDuJourServices
+    public class MenusDuJourServices
     {
 
 
         private readonly CantineContext _context;
 
-        public MenuDuJourServices( CantineContext context)
+        public MenusDuJourServices( CantineContext context)
         {
             _context = context;
         }
@@ -24,7 +24,7 @@ namespace Cantine.Data.Services
             {
                 throw new ArgumentNullException(nameof(obj));
             }
-            _context.MenuDuJour.Add(obj);
+            _context.MenusDuJour.Add(obj);
             _context.SaveChanges();
         }
 
@@ -34,22 +34,22 @@ namespace Cantine.Data.Services
             {
                 throw new ArgumentNullException(nameof(obj));
             }
-            _context.MenuDuJour.Remove(obj);
+            _context.MenusDuJour.Remove(obj);
             _context.SaveChanges();
         }
 
         public IEnumerable<MenuDuJour> GetAllMenuDuJour()
         {
-            return _context.MenuDuJour.ToList();
+            return _context.MenusDuJour.ToList();
         }
 
         public MenuDuJour GetMenuDuJourById(int id)
         {
-            return _context.MenuDuJour.FirstOrDefault(obj => obj.IdMenuDuJour == id);
+            return _context.MenusDuJour.FirstOrDefault(obj => obj.IdMenuDuJour == id);
         }
         public MenuDuJour GetMenuDuJourByDateDuJour(DateTime DateDuJour)
         {
-            return _context.MenuDuJour.FirstOrDefault(obj => obj.DateDuJour == DateDuJour);
+            return _context.MenusDuJour.FirstOrDefault(obj => obj.DateDuJour == DateDuJour);
         }
 
         public void UpdateMenuDuJour(MenuDuJour obj)

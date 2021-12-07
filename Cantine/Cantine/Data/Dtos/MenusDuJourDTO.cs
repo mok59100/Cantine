@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace Cantine.Data.Dtos
 {
-    class MenuDuJourDTOIn
+    class MenusDuJourDTOIn
     {
         public DateTime DateDuJour { get; set; }
         public List<MenusDTOIn> Menus { get; set; }
     }
 
-    class MenuDuJourDTOOut
+    class MenusDuJourDTOOut
     {
         public DateTime DateDuJour { get; set; }
         public List<MenusDTOIn> Menus { get; set; }

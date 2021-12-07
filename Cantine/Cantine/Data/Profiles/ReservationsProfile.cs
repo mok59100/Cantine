@@ -13,15 +13,15 @@ namespace Cantine.Data.Profiles
     {
         public ReservationsProfile()
             {
-                CreateMap<Reservations, ReservationsDTOIn>();
-                CreateMap<ReservationsDTOIn, Reservations>();
-                CreateMap<Reservations, ReservationsDTOOutUtilisateur>();
-                CreateMap<ReservationsDTOOutUtilisateur, Reservations>();
+                CreateMap<Reservation, ReservationsDTOIn>();
+                CreateMap<ReservationsDTOIn, Reservation>();
+                CreateMap<Reservation, ReservationsDTOOutUtilisateur>();
+                CreateMap<ReservationsDTOOutUtilisateur, Reservation>();
             
-                CreateMap<Reservations, ReservationsDTOOutAdmin>();
-                CreateMap<ReservationsDTOOutAdmin, Reservations>();
-                CreateMap<Reservations, ReservationsDTOOutReglement>();
-                CreateMap<ReservationsDTOOutReglement, Reservations>();
+                CreateMap<Reservation, ReservationsDTOOutAdmin>();
+                CreateMap<ReservationsDTOOutAdmin, Reservation>();
+                CreateMap<Reservation, ReservationsDTOOutReglement>();
+                CreateMap<ReservationsDTOOutReglement, Reservation>();
 
             }
     }

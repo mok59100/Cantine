@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace Cantine.Data.Services
 {
-    class TypePaiementsServices
+    class TypesPaiementsServices
     {
 
         private readonly CantineContext _context;
 
-        public TypePaiementsServices(CantineContext context)
+        public TypesPaiementsServices(CantineContext context)
         {
             _context = context;
         }

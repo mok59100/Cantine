@@ -14,4 +14,4 @@ namespace Cantine.Data.Dtos
         public string MotDePasse { get; set; }
     }
 }
-}
+
