@@ -4,14 +4,15 @@
 winexe
 C#
 .cs
-C:\Users\59011-07-02\Documents\Cantine\Cantine\Cantine\obj\Debug\net5.0-windows\
+C:\Users\59011-07-03\Documents\Cantine\Cantine\Cantine\obj\Debug\net5.0-windows\
 Cantine
 none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
-C:\Users\59011-07-02\Documents\Cantine\Cantine\Cantine\App.xaml
+C:\Users\59011-07-03\Documents\Cantine\Cantine\Cantine\App.xaml
 11407045341
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 22-365647342
 33984148985
@@ -19,6 +20,10 @@ C:\Users\59011-07-02\Documents\Cantine\Cantine\Cantine\App.xaml
 241192847667
 339199645268
 >>>>>>> 11d0bb786aabfa4e37cbbe446cf7860e3fb1f4fc
+=======
+261140676145
+193-1891726104
+>>>>>>> 56ed86fe95c1ba53b620ed041ec7ac1be2fc1efc
 MainWindow.xaml;
 
 False
