@@ -19,10 +19,10 @@ namespace Cantine.Data
         }
 
         public virtual DbSet<Eleve> Eleves { get; set; }
-        public virtual DbSet<Menu> Menus { get; set; }
+        public virtual DbSet<Menus> Menus { get; set; }
         public virtual DbSet<MenuDuJour> Menudujours { get; set; }
         public virtual DbSet<Reglement> Reglements { get; set; }
-        public virtual DbSet<Reservation> Reservations { get; set; }
+        public virtual DbSet<Reservations> Reservations { get; set; }
         public virtual DbSet<ReservationsMenu> Reservationsmenus { get; set; }
         public virtual DbSet<TypePaiement> Typepaiements { get; set; }
         public virtual DbSet<Utilisateur> Utilisateurs { get; set; }
@@ -67,7 +67,7 @@ namespace Cantine.Data
                     .HasMaxLength(50);
             });
 
-            modelBuilder.Entity<Menu>(entity =>
+            modelBuilder.Entity<Menus>(entity =>
             {
                 entity.HasKey(e => e.IdMenu)
                     .HasName("PRIMARY");
@@ -155,7 +155,7 @@ namespace Cantine.Data
                     .HasConstraintName("FK_Reglements_Eleves");
             });
 
-            modelBuilder.Entity<Reservation>(entity =>
+            modelBuilder.Entity<Reservations>(entity =>
             {
                 entity.HasKey(e => e.IdReservation)
                     .HasName("PRIMARY");
