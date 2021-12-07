@@ -15,8 +15,8 @@ namespace Cantine.Data.Profiles
 
         public TypePaiementsProfile()
         {
-            CreateMap<TypePaiements, TypePaiementsDTOIn>();
-            CreateMap<TypePaiementsDTOIn, TypePaiements>();
+            CreateMap<TypePaiement, TypePaiementsDTOIn>();
+            CreateMap<TypePaiementsDTOIn, TypePaiement>();
 
 
 

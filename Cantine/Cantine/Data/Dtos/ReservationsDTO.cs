@@ -34,7 +34,7 @@ namespace Cantine.Data.Dtos
 
         public List<ReservationsMenusDTOOut> Reservations { get; set; }
 
-        public EleveDTOOut Eleve { get; set; }
+        public ElevesDTOOut Eleve { get; set; }
 
     }
 

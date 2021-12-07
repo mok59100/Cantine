@@ -13,11 +13,11 @@ namespace Cantine.Data.Profiles
     {
         public ElevesProfile()
         {
-            CreateMap<Eleve, EleveDTOIn>();
-            CreateMap<EleveDTOIn, Eleve>();
+            CreateMap<Eleve, ElevesDTOIn>();
+            CreateMap<ElevesDTOIn, Eleve>();
 
-            CreateMap<Eleve, EleveDTOOut>();
-            CreateMap<EleveDTOOut, Eleve>();
+            CreateMap<Eleve, ElevesDTOOut>();
+            CreateMap<ElevesDTOOut, Eleve>();
 
           
         }

@@ -49,7 +49,7 @@ namespace Cantine.Data.Services
         }
         public MenuDuJour GetMenuDuJourByDateDuJour(DateTime DateDuJour)
         {
-            return _context.MenuDuJour.FirstOrDefault(obj => obj.DateTime == DateDuJour);
+            return _context.MenuDuJour.FirstOrDefault(obj => obj.DateDuJour == DateDuJour);
         }
 
         public void UpdateMenuDuJour(MenuDuJour obj)
