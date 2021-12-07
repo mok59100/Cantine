@@ -5,9 +5,9 @@ using System.Collections.Generic;
 
 namespace Cantine.Data.Models
 {
-    public partial class Reservation
+    public partial class Reservations
     {
-        public Reservation()
+        public Reservations()
         {
             Reglements = new HashSet<Reglement>();
             Reservationsmenus = new HashSet<Reservationsmenu>();
