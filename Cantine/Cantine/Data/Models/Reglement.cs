@@ -14,7 +14,7 @@ namespace Cantine.Data.Models
         public DateTime DateReglement { get; set; }
 
         public virtual Reservation IdReservationNavigation { get; set; }
-        public virtual Typepaiement IdTypePaiementNavigation { get; set; }
+        public virtual TypePaiement IdTypePaiementNavigation { get; set; }
         public virtual Eleve IdUtilisateurNavigation { get; set; }
     }
 }

@@ -9,8 +9,8 @@ namespace Cantine.Data.Models
     {
         public Menu()
         {
-            Menudujours = new HashSet<Menudujour>();
-            Reservationsmenus = new HashSet<Reservationsmenu>();
+            Menudujours = new HashSet<MenuDuJour>();
+            Reservationsmenus = new HashSet<ReservationsMenu>();
         }
 
         public int IdMenu { get; set; }
@@ -20,7 +20,7 @@ namespace Cantine.Data.Models
         public string Dessert { get; set; }
         public decimal Prix { get; set; }
 
-        public virtual ICollection<Menudujour> Menudujours { get; set; }
-        public virtual ICollection<Reservationsmenu> Reservationsmenus { get; set; }
+        public virtual ICollection<MenuDuJour> Menudujours { get; set; }
+        public virtual ICollection<ReservationsMenu> Reservationsmenus { get; set; }
     }
 }

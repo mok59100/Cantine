@@ -20,11 +20,11 @@ namespace Cantine.Data
 
         public virtual DbSet<Eleve> Eleves { get; set; }
         public virtual DbSet<Menu> Menus { get; set; }
-        public virtual DbSet<Menudujour> Menudujours { get; set; }
+        public virtual DbSet<MenuDuJour> Menudujours { get; set; }
         public virtual DbSet<Reglement> Reglements { get; set; }
         public virtual DbSet<Reservation> Reservations { get; set; }
-        public virtual DbSet<Reservationsmenu> Reservationsmenus { get; set; }
-        public virtual DbSet<Typepaiement> Typepaiements { get; set; }
+        public virtual DbSet<ReservationsMenu> Reservationsmenus { get; set; }
+        public virtual DbSet<TypePaiement> Typepaiements { get; set; }
         public virtual DbSet<Utilisateur> Utilisateurs { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -95,7 +95,7 @@ namespace Cantine.Data
                 entity.Property(e => e.Prix).HasColumnType("decimal(15,2)");
             });
 
-            modelBuilder.Entity<Menudujour>(entity =>
+            modelBuilder.Entity<MenuDuJour>(entity =>
             {
                 entity.HasKey(e => e.IdMenuDuJour)
                     .HasName("PRIMARY");
@@ -179,7 +179,7 @@ namespace Cantine.Data
                     .HasConstraintName("FK_Reservations_Eleves");
             });
 
-            modelBuilder.Entity<Reservationsmenu>(entity =>
+            modelBuilder.Entity<ReservationsMenu>(entity =>
             {
                 entity.HasKey(e => e.IdReservationMenu)
                     .HasName("PRIMARY");
@@ -196,7 +196,7 @@ namespace Cantine.Data
 
                 entity.Property(e => e.IdReservation).HasColumnType("int(11)");
 
-                entity.HasOne(d => d.IdMenuNavigation)
+                entity.HasOne(d => d.Menu)
                     .WithMany(p => p.Reservationsmenus)
                     .HasForeignKey(d => d.IdMenu)
                     .HasConstraintName("FK_ReservationsMenus_Menus");
@@ -207,7 +207,7 @@ namespace Cantine.Data
                     .HasConstraintName("FK_ReservationsMenus_Reservations");
             });
 
-            modelBuilder.Entity<Typepaiement>(entity =>
+            modelBuilder.Entity<TypePaiement>(entity =>
             {
                 entity.HasKey(e => e.IdTypePaiement)
                     .HasName("PRIMARY");
