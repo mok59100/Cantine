@@ -5,9 +5,9 @@ using System.Collections.Generic;
 
 namespace Cantine.Data.Models
 {
-    public partial class Menu
+    public partial class Menus
     {
-        public Menu()
+        public Menus()
         {
             Menudujours = new HashSet<MenuDuJour>();
             Reservationsmenus = new HashSet<ReservationsMenu>();
