@@ -5,9 +5,9 @@ using System.Collections.Generic;
 
 namespace Cantine.Data.Models
 {
-    public partial class Typepaiement
+    public partial class TypePaiement
     {
-        public Typepaiement()
+        public TypePaiement()
         {
             Reglements = new HashSet<Reglement>();
         }

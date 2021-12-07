@@ -5,13 +5,13 @@ using System.Collections.Generic;
 
 namespace Cantine.Data.Models
 {
-    public partial class Reservationsmenu
+    public partial class ReservationsMenu
     {
         public int IdReservationMenu { get; set; }
         public int? IdMenu { get; set; }
         public int? IdReservation { get; set; }
 
-        public virtual Menu IdMenuNavigation { get; set; }
+        public virtual Menu Menu { get; set; }
         public virtual Reservation IdReservationNavigation { get; set; }
     }
 }
