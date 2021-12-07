@@ -10,14 +10,14 @@ namespace Cantine.Data.Services
     class ReservationsServices
     {
 
-        private readonly cantineContext _context;
+        private readonly CantineContext _context;
 
-        public ReservationsServices(cantineContext context)
+        public ReservationsServices(CantineContext context)
         {
             _context = context;
         }
 
-        public void AddReservations(Reservations obj)
+        public void AddReservations(Reservation obj)
         {
             if (obj == null)
             {
@@ -27,7 +27,7 @@ namespace Cantine.Data.Services
             _context.SaveChanges();
         }
 
-        public void DeleteReservations(Reservations obj)
+        public void DeleteReservations(Reservation obj)
         {
             if (obj == null)
             {
@@ -37,17 +37,17 @@ namespace Cantine.Data.Services
             _context.SaveChanges();
         }
 
-        public IEnumerable<Reservations> GetAllReservations()
+        public IEnumerable<Reservation> GetAllReservations()
         {
             return _context.Reservations.ToList();
         }
 
-        public Reservations GetReservationsById(int id)
+        public Reservation GetReservationsById(int id)
         {
             return _context.Reservations.FirstOrDefault(obj => obj.IdReservation == id);
         }
 
-        public void UpdateReservations(Reservations obj)
+        public void UpdateReservations(Reservation obj)
         {
             _context.SaveChanges();
         }

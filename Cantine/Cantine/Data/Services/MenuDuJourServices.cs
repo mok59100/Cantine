@@ -11,9 +11,9 @@ namespace Cantine.Data.Services
     {
 
 
-        private readonly cantineContext _context;
+        private readonly CantineContext _context;
 
-        public MenuDuJourServices( cantineContext context)
+        public MenuDuJourServices( CantineContext context)
         {
             _context = context;
         }

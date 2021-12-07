@@ -10,7 +10,7 @@ namespace Cantine.Data.Models
         public Eleve()
         {
             Reglements = new HashSet<Reglement>();
-            Reservations = new HashSet<Reservations>();
+            Reservations = new HashSet<Reservation>();
         }
 
         public int IdUtilisateur { get; set; }
@@ -22,6 +22,6 @@ namespace Cantine.Data.Models
         public string Mail { get; set; }
 
         public virtual ICollection<Reglement> Reglements { get; set; }
-        public virtual ICollection<Reservations> Reservations { get; set; }
+        public virtual ICollection<Reservation> Reservations { get; set; }
     }
 }

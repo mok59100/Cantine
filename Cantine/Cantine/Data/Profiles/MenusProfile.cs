@@ -14,8 +14,8 @@ namespace Cantine.Data.Profiles
         public MenusProfile()
             {
 
-               CreateMap<Menus, MenusDTOIn>();
-               CreateMap<MenusDTOIn, Menus>();
+               CreateMap<Menu, MenusDTOIn>();
+               CreateMap<MenusDTOIn, Menu>();
                
            }
 

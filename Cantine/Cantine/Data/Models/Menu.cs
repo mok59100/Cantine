@@ -5,12 +5,12 @@ using System.Collections.Generic;
 
 namespace Cantine.Data.Models
 {
-    public partial class Menus
+    public partial class Menu
     {
-        public Menus()
+        public Menu()
         {
             Menudujours = new HashSet<MenuDuJour>();
-            Reservationsmenus = new HashSet<ReservationsMenu>();
+            Reservationsmenus = new HashSet<ReservationMenu>();
         }
 
         public int IdMenu { get; set; }
@@ -21,6 +21,6 @@ namespace Cantine.Data.Models
         public decimal Prix { get; set; }
 
         public virtual ICollection<MenuDuJour> Menudujours { get; set; }
-        public virtual ICollection<ReservationsMenu> Reservationsmenus { get; set; }
+        public virtual ICollection<ReservationMenu> Reservationsmenus { get; set; }
     }
 }

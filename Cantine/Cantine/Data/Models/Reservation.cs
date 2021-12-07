@@ -5,12 +5,12 @@ using System.Collections.Generic;
 
 namespace Cantine.Data.Models
 {
-    public partial class Reservations
+    public partial class Reservation
     {
-        public Reservations()
+        public Reservation()
         {
             Reglements = new HashSet<Reglement>();
-            Reservationsmenus = new HashSet<ReservationsMenu>();
+            ReservationsMenus = new HashSet<ReservationMenu>();
         }
 
         public int IdReservation { get; set; }
@@ -18,8 +18,8 @@ namespace Cantine.Data.Models
         public DateTime DateRepas { get; set; }
         public int IdUtilisateur { get; set; }
 
-        public virtual Eleve IdUtilisateurNavigation { get; set; }
+        public virtual Eleve Utilisateur { get; set; }
         public virtual ICollection<Reglement> Reglements { get; set; }
-        public virtual ICollection<ReservationsMenu> Reservationsmenus { get; set; }
+        public virtual ICollection<ReservationMenu> ReservationsMenus { get; set; }
     }
 }

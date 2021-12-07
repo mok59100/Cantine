@@ -7,46 +7,47 @@ using System.Threading.Tasks;
 
 namespace Cantine.Data.Services
 {
-    class MenusServices
+    class TypePaiementsServices
     {
+
         private readonly CantineContext _context;
 
-        public MenusServices(CantineContext context)
+        public TypePaiementsServices(CantineContext context)
         {
             _context = context;
         }
 
-        public void AddMenus(Menu obj)
+        public void AddTypePaiements(TypePaiement obj)
         {
             if (obj == null)
             {
                 throw new ArgumentNullException(nameof(obj));
             }
-            _context.Menus.Add(obj);
+            _context.TypesPaiements.Add(obj);
             _context.SaveChanges();
         }
 
-        public void DeleteMenus(Menu obj)
+        public void DeleteTypePaiements(TypePaiement obj)
         {
             if (obj == null)
             {
                 throw new ArgumentNullException(nameof(obj));
             }
-            _context.Menus.Remove(obj);
+            _context.TypesPaiements.Remove(obj);
             _context.SaveChanges();
         }
 
-        public IEnumerable<Menu> GetAllMenus()
+        public IEnumerable<TypePaiement> GetAllTypePaiements()
         {
-            return _context.Menus.ToList();
+            return _context.TypesPaiements.ToList();
         }
 
-        public Menu GetMenusById(int id)
+        public TypePaiement GetTypePaiementsById(int id)
         {
-            return _context.Menus.FirstOrDefault(obj => obj.IdMenu == id);
+            return _context.TypesPaiements.FirstOrDefault(obj => obj.IdTypePaiement == id);
         }
 
-        public void UpdateMenus(Menu obj)
+        public void UpdateTypePaiements(TypePaiement obj)
         {
             _context.SaveChanges();
         }

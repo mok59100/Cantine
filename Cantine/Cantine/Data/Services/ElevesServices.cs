@@ -10,9 +10,9 @@ namespace Cantine.Data.Services
     class ElevesServices
     {
 
-        private readonly cantineContext _context;
+        private readonly CantineContext _context;
 
-        public ElevesServices(cantineContext context)
+        public ElevesServices(CantineContext context)
         {
             _context = context;
         }

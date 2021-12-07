@@ -7,24 +7,24 @@ using Cantine.Data.Models;
 
 namespace Cantine.Data
 {
-    public partial class cantineContext : DbContext
+    public partial class CantineContext : DbContext
     {
-        public cantineContext()
+        public CantineContext()
         {
         }
 
-        public cantineContext(DbContextOptions<cantineContext> options)
+        public CantineContext(DbContextOptions<CantineContext> options)
             : base(options)
         {
         }
 
         public virtual DbSet<Eleve> Eleves { get; set; }
-        public virtual DbSet<Menus> Menus { get; set; }
+        public virtual DbSet<Menu> Menus { get; set; }
         public virtual DbSet<MenuDuJour> MenuDuJour { get; set; }
         public virtual DbSet<Reglement> Reglements { get; set; }
-        public virtual DbSet<Reservations> Reservations { get; set; }
-        public virtual DbSet<ReservationsMenu> Reservationsmenus { get; set; }
-        public virtual DbSet<TypePaiement> Typepaiements { get; set; }
+        public virtual DbSet<Reservation> Reservations { get; set; }
+        public virtual DbSet<ReservationMenu> ReservationsMenus { get; set; }
+        public virtual DbSet<TypePaiement> TypesPaiements { get; set; }
         public virtual DbSet<Utilisateur> Utilisateurs { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -67,7 +67,7 @@ namespace Cantine.Data
                     .HasMaxLength(50);
             });
 
-            modelBuilder.Entity<Menus>(entity =>
+            modelBuilder.Entity<Menu>(entity =>
             {
                 entity.HasKey(e => e.IdMenu)
                     .HasName("PRIMARY");
@@ -155,7 +155,7 @@ namespace Cantine.Data
                     .HasConstraintName("FK_Reglements_Eleves");
             });
 
-            modelBuilder.Entity<Reservations>(entity =>
+            modelBuilder.Entity<Reservation>(entity =>
             {
                 entity.HasKey(e => e.IdReservation)
                     .HasName("PRIMARY");
@@ -172,14 +172,14 @@ namespace Cantine.Data
 
                 entity.Property(e => e.IdUtilisateur).HasColumnType("int(11)");
 
-                entity.HasOne(d => d.IdUtilisateurNavigation)
+                entity.HasOne(d => d.Utilisateur)
                     .WithMany(p => p.Reservations)
                     .HasForeignKey(d => d.IdUtilisateur)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Reservations_Eleves");
             });
 
-            modelBuilder.Entity<ReservationsMenu>(entity =>
+            modelBuilder.Entity<ReservationMenu>(entity =>
             {
                 entity.HasKey(e => e.IdReservationMenu)
                     .HasName("PRIMARY");
@@ -202,7 +202,7 @@ namespace Cantine.Data
                     .HasConstraintName("FK_ReservationsMenus_Menus");
 
                 entity.HasOne(d => d.IdReservationNavigation)
-                    .WithMany(p => p.Reservationsmenus)
+                    .WithMany(p => p.ReservationsMenus)
                     .HasForeignKey(d => d.IdReservation)
                     .HasConstraintName("FK_ReservationsMenus_Reservations");
             });
