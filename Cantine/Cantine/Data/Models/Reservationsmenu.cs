@@ -11,7 +11,7 @@ namespace Cantine.Data.Models
         public int? IdMenu { get; set; }
         public int? IdReservation { get; set; }
 
-        public virtual Menu Menu { get; set; }
-        public virtual Reservation IdReservationNavigation { get; set; }
+        public virtual Menus Menu { get; set; }
+        public virtual Reservations IdReservationNavigation { get; set; }
     }
 }

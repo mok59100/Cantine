@@ -22,29 +22,27 @@ namespace Cantine.Data.Dtos
 
         public DateTime Repas { get; set; }
 
-         Liste<ReservationsMenusDTOOut> Resa { get; set; }
+        public List<ReservationsMenusDTOOut> Reservations { get; set; }
 
     }
 
      class ReservationsDTOOutAdmin
     {
-    public DateTime DateReservation { get; set; }
+        public DateTime DateReservation { get; set; }
 
-    public DateTime Repas { get; set; }
+        public DateTime Repas { get; set; }
 
-    Liste<ReservationsMenusDTOOut> { get; set; }
+        public List<ReservationsMenusDTOOut> Reservations { get; set; }
 
-    public ElevesDTOOut student { get; set; }
+        public EleveDTOOut Eleve { get; set; }
 
     }
 
     class ReservationsDTOOutReglement
     {
-    public DateTime DateReservation { get; set; }
+        public DateTime DateReservation { get; set; }
 
-    public DateTime Repas { get; set; }
-
-
+        public DateTime Repas { get; set; }
 
     }
 

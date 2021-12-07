@@ -8,7 +8,7 @@ namespace Cantine.Data.Dtos
 {
     class MenusDTOIn
     {
-        public string ILibelleMenu { get; set; }
+        public string LibelleMenu { get; set; }
         public string Entree { get; set; }
         public string Plat { get; set; }
         public string Dessert { get; set; }

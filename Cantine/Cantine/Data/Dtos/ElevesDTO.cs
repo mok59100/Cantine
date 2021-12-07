@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Cantine.Data.Dtos
 {
-    public partial class EleveDTOIn
+    public partial class ElevesDTOIn
     {
         
         
@@ -19,7 +19,7 @@ namespace Cantine.Data.Dtos
        
     }
 
-    public partial class EleveDTOOut
+    public partial class ElevesDTOOut
     {
 
         public string Nom { get; set; }
