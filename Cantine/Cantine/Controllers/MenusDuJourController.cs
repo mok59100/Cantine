@@ -26,83 +26,63 @@ namespace Cantine.Controllers
 
         //GET api/MenusDuJour
         [HttpGet]
-        public ActionResult<IEnumerable<MenusDuJourDTOIn>> GetAllMenusDuJour()
+        public IEnumerable<MenusDuJourDTOOut> GetAllMenusDuJour()
         {
             IEnumerable<MenuDuJour> listeMenusDuJour = _service.GetAllMenusDuJour();
-            return Ok(_mapper.Map<IEnumerable<MenusDuJourDTOIn>>(listeMenusDuJour));
+            return _mapper.Map<IEnumerable<MenusDuJourDTOOut>>(listeMenusDuJour);
+        }
+
+        public IEnumerable<MenusDuJourDTOOut> GetMenusDuJourByDateDuJour(DateTime DateDuJour)
+        {
+            IEnumerable<MenuDuJour> listeMenusDuJour = _service.GetMenusDuJourByDateDuJour(DateDuJour);
+            return _mapper.Map<IEnumerable<MenusDuJourDTOOut>>(listeMenusDuJour);
         }
 
         //GET api/MenusDuJour/{i}
         [HttpGet("{id}", Name = "GetMenusDuJourById")]
-        public ActionResult<MenusDuJourDTOIn> GetMenusDuJourById(int id)
+        public MenusDuJourDTOOut GetMenusDuJourById(int id)
         {
-            MenuDuJour commandItem = _service.GetMenusDuJourById(id);
+            MenuDuJour commandItem = _service.GetMenuDuJourById(id);
             if (commandItem != null)
             {
-                return Ok(_mapper.Map<MenusDuJourDTOIn>(commandItem));
+                return _mapper.Map<MenusDuJourDTOOut>(commandItem);
             }
-            return NotFound();
+            return null;
         }
 
         //POST api/MenusDuJour
         [HttpPost]
-        public ActionResult<MenusDuJourDTOIn> CreateMenusDuJour(MenuDuJour obj)
+        public void CreateMenusDuJour(MenuDuJour obj)
         {
-            _service.AddMenusDuJour(obj);
-            return CreatedAtRoute(nameof(GetMenusDuJourById), new { Id = obj.IdMenuDuJour }, obj);
+            _service.AddMenuDuJour(obj);
+            
         }
 
         //POST api/MenusDuJour/{id}
         [HttpPut("{id}")]
-        public ActionResult UpdateMenusDuJour(int id, MenusDuJourDTOIn obj)
+        public bool UpdateMenusDuJour(int id, MenusDuJourDTOIn obj)
         {
-            MenuDuJour objFromRepo = _service.GetMenusDuJourById(id);
+            MenuDuJour objFromRepo = _service.GetMenuDuJourById(id);
             if (objFromRepo == null)
             {
-                return NotFound();
+                return false;
             }
             _mapper.Map(obj, objFromRepo);
-            _service.UpdateMenusDuJour(objFromRepo);
-            return NoContent();
-        }
-
-        // Exemple d'appel
-        // [{
-        // "op":"replace",
-        // "path":"",
-        // "value":""
-        // }]
-        //PATCH api/MenusDuJour/{id}
-        [HttpPatch("{id}")]
-        public ActionResult PartialMenusDuJourUpdate(int id, JsonPatchDocument<MenuDuJour> patchDoc)
-        {
-            MenuDuJour objFromRepo = _service.GetMenusDuJourById(id);
-            if (objFromRepo == null)
-            {
-                return NotFound();
-            }
-            MenuDuJour objToPatch = _mapper.Map<MenuDuJour>(objFromRepo);
-            patchDoc.ApplyTo(objToPatch, ModelState);
-            if (!TryValidateModel(objToPatch))
-            {
-                return ValidationProblem(ModelState);
-            }
-            _mapper.Map(objToPatch, objFromRepo);
-            _service.UpdateMenusDuJour(objFromRepo);
-            return NoContent();
+            _service.UpdateMenuDuJour(objFromRepo);
+            return true;
         }
 
         //DELETE api/MenusDuJour/{id}
         [HttpDelete("{id}")]
-        public ActionResult DeleteMenusDuJour(int id)
+        public bool DeleteMenusDuJour(int id)
         {
-            MenuDuJour obj = _service.GetMenusDuJourById(id);
+            MenuDuJour obj = _service.GetMenuDuJourById(id);
             if (obj == null)
             {
-                return NotFound();
+                return false;
             }
-            _service.DeleteMenusDuJour(obj);
-            return NoContent();
+            _service.DeleteMenuDuJour(obj);
+            return true;
         }
 
 

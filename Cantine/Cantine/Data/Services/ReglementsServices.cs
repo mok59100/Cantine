@@ -47,14 +47,14 @@ namespace Cantine.Data.Services
             return _context.Reglements.FirstOrDefault(obj => obj.IdReglement == id);
         }
 
-        public IEnumerable<Reglement> GetReglementsByEleves(int id)
+        public IEnumerable<Reglement> GetReglementsByEleves(int idUtilisateur)
         {
-            return _context.Reglements.Where(o => o.IdUtilisateur == id).ToList();
+            return _context.Reglements.Where(o => o.IdUtilisateur == idUtilisateur).ToList();
         }
 
-        public IEnumerable<Reglement> GetReglementsByReservations(int id)
+        public IEnumerable<Reglement> GetReglementsByReservations(int idReservation)
         {
-            return _context.Reglements.Where(o => o.IdReservation == id).ToList();
+            return _context.Reglements.Where(o => o.IdReservation == idReservation).ToList();
         }
 
         public void UpdateReglement(Reglement obj)

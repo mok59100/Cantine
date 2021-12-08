@@ -26,58 +26,58 @@ namespace Cantine.Controllers
 
         //GET api/Eleves
         [HttpGet]
-        public ActionResult<IEnumerable<ElevesDTOOut>> GetAllEleves()
+        public IEnumerable<ElevesDTOOut> GetAllEleves()
         {
             IEnumerable<Eleve> listeEleves = _service.GetAllEleves();
-            return Ok(_mapper.Map<IEnumerable<ElevesDTOOut>>(listeEleves));
+            return _mapper.Map<IEnumerable<ElevesDTOOut>>(listeEleves);
         }
 
         //GET api/Eleves/{i}
         [HttpGet("{id}", Name = "GetEleveById")]
-        public ActionResult<ElevesDTOOut> GetEleveById(int id)
+        public ElevesDTOOut GetEleveById(int id)
         {
             Eleve commandItem = _service.GetEleveById(id);
             if (commandItem != null)
             {
-                return Ok(_mapper.Map<ElevesDTOOut>(commandItem));
+                return _mapper.Map<ElevesDTOOut>(commandItem);
             }
-            return NotFound();
+            return null;
         }
 
         //POST api/Eleves
         [HttpPost]
-        public ActionResult<ElevesDTOIn> CreateEleve(Eleve obj)
+        public void CreateEleve(Eleve obj)
         {
             _service.AddEleve(obj);
-            return CreatedAtRoute(nameof(GetEleveById), new { Id = obj.IdUtilisateur}, obj);
+            
         }
 
         //POST api/Eleves/{id}
         [HttpPut("{id}")]
-        public ActionResult UpdateEleve(int id, ElevesDTOIn obj)
+        public bool UpdateEleve(int id, ElevesDTOIn obj)
         {
             Eleve objFromRepo = _service.GetEleveById(id);
             if (objFromRepo == null)
             {
-                return NotFound();
+                return false;
             }
             _mapper.Map(obj, objFromRepo);
             _service.UpdateEleve(objFromRepo);
-            return NoContent();
+            return true;
         }
 
         
         //DELETE api/Eleves/{id}
         [HttpDelete("{id}")]
-        public ActionResult DeleteEleve(int id)
+        public bool DeleteEleve(int id)
         {
             Eleve obj = _service.GetEleveById(id);
             if (obj == null)
             {
-                return NotFound();
+                return false;
             }
             _service.DeleteEleve(obj);
-            return NoContent();
+            return true;
         }
 
 

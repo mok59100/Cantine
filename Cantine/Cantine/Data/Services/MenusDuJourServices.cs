@@ -18,7 +18,7 @@ namespace Cantine.Data.Services
             _context = context;
         }
 
-        public void AddMenusDuJour(MenuDuJour obj)
+        public void AddMenuDuJour(MenuDuJour obj)
         {
             if (obj == null)
             {
@@ -28,7 +28,7 @@ namespace Cantine.Data.Services
             _context.SaveChanges();
         }
 
-        public void DeleteMenusDuJour(MenuDuJour obj)
+        public void DeleteMenuDuJour(MenuDuJour obj)
         {
             if (obj == null)
             {
@@ -43,16 +43,16 @@ namespace Cantine.Data.Services
             return _context.MenusDuJour.ToList();
         }
 
-        public MenuDuJour GetMenusDuJourById(int id)
+        public MenuDuJour GetMenuDuJourById(int id)
         {
             return _context.MenusDuJour.FirstOrDefault(obj => obj.IdMenuDuJour == id);
         }
-        public MenuDuJour GetMenusDuJourByDateDuJour(DateTime DateDuJour)
+        public IEnumerable<MenuDuJour> GetMenusDuJourByDateDuJour(DateTime DateDuJour)
         {
-            return _context.MenusDuJour.FirstOrDefault(obj => obj.DateDuJour == DateDuJour);
+            return _context.MenusDuJour.Where(obj => obj.DateDuJour == DateDuJour).ToList();
         }
 
-        public void UpdateMenusDuJour(MenuDuJour obj)
+        public void UpdateMenuDuJour(MenuDuJour obj)
         {
             _context.SaveChanges();
         }
