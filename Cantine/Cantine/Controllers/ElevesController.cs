@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
+using Cantine.Data;
 using Cantine.Data.Dtos;
 using Cantine.Data.Models;
+using Cantine.Data.Profiles;
 using Cantine.Data.Services;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
@@ -18,10 +20,16 @@ namespace Cantine.Controllers
         private readonly ElevesServices _service;
         private readonly IMapper _mapper;
 
-        public ElevesController(ElevesServices service, IMapper mapper)
+        public ElevesController(CantineContext _context)
         {
-            _service = service;
-            _mapper = mapper;
+            _service = new ElevesServices(_context);
+
+            var config = new MapperConfiguration(cfg =>
+            {             
+                cfg.AddProfile<ElevesProfile>();
+
+            });
+            _mapper = config.CreateMapper();
         }
 
         //GET api/Eleves

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Cantine.Controllers;
+using Cantine.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +21,15 @@ namespace Cantine.Listes
     /// </summary>
     public partial class ListeReservations : Window
     {
+        CantineContext _context;
+        ReservationsController _reservationsController;
+
         public ListeReservations()
         {
             InitializeComponent();
+            _context = new CantineContext();
+            _reservationsController = new ReservationsController(_context);
+
         }
     }
 }

@@ -28,12 +28,12 @@
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
         <Label x:Name="labTitreFormulaire" Content="Titre" Grid.Row="1" HorizontalContentAlignment="Center" Grid.Column="1" FontWeight="Bold" FontSize="16" Grid.ColumnSpan="3"/>
-        <Label Content="Date de Reservation :" Grid.Row="3" HorizontalContentAlignment="Center" Grid.Column="1" />
-        <DatePicker x:Name="dateReservation" Grid.Row="3" Text="" HorizontalContentAlignment="Center" Grid.Column="3"/>
-        <Label Content="Date de Repas :" Grid.Row="5" HorizontalContentAlignment="Center" Grid.Column="1"/>
-        <DatePicker x:Name="dateRepas" Grid.Row="5" Text="" HorizontalContentAlignment="Center" Grid.Column="3"/>
-        <Label Content="Utilisateur :" Grid.Row="7" HorizontalContentAlignment="Center" Grid.Column="1"/>
-        <ComboBox x:Name="cbCategorie" Grid.Row="7" Text="" HorizontalContentAlignment="Center" Grid.Column="3">
+        <Label Content="Date de Reservation :" Grid.Row="3" HorizontalContentAlignment="Center" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        <DatePicker x:Name="dateReservation" Grid.Row="3" Text="" HorizontalContentAlignment="Center" Grid.Column="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+        <Label Content="Date de Repas :" Grid.Row="5" HorizontalContentAlignment="Center" Grid.Column="1" VerticalAlignment="Stretch"/>
+        <DatePicker x:Name="dateRepas" Grid.Row="5" Text="" HorizontalContentAlignment="Center" Grid.Column="3" VerticalAlignment="Stretch"/>
+        <Label Content="Utilisateur :" Grid.Row="7" HorizontalContentAlignment="Center" Grid.Column="1" VerticalAlignment="Center"/>
+        <ComboBox x:Name="cbCategorie" Grid.Row="7" Text="" HorizontalContentAlignment="Center" Grid.Column="3" VerticalAlignment="Stretch">
         </ComboBox>
         <Grid Grid.Row="9" Grid.Column="1" Grid.ColumnSpan="3">
 
