@@ -27,105 +27,70 @@ namespace Cantine.Controllers
 
         //GET api/Reglements
         [HttpGet]
-        public ActionResult<IEnumerable<ReglementsDTOOutUtilisateur>> GetAllReglements()
+        public IEnumerable<ReglementsDTOOutUtilisateur> GetAllReglements()
         {
             IEnumerable<Reglement> listeReglements = _service.GetAllReglements();
-            return Ok(_mapper.Map<IEnumerable<ReglementsDTOOutUtilisateur>>(listeReglements));
+            return _mapper.Map<IEnumerable<ReglementsDTOOutUtilisateur>>(listeReglements);
         }
 
         //GET api/Reglements/{i}
         [HttpGet("{id}", Name = "GetReglementById")]
-        public ActionResult<ReglementsDTOOutAdmin> GetReglementById(int id)
+        public ReglementsDTOOutAdmin GetReglementById(int id)
         {
             Reglement commandItem = _service.GetReglementById(id);
             if (commandItem != null)
             {
-                return Ok(_mapper.Map<ReglementsDTOOutAdmin>(commandItem));
+                return _mapper.Map<ReglementsDTOOutAdmin>(commandItem);
             }
-            return NotFound();
+            return null;
         }
 
         [HttpGet("{idUtilisateur}", Name = "GetReglementsByEleves")]
-        public ActionResult<ReglementsDTOOutAdmin> GetReglementByEleves(int id)
+        public IEnumerable<ReglementsDTOOutAdmin> GetReglementByEleves(int idUtilisateur)
         {
-            IEnumerable<Reglement> commandItem = _service.GetReglementsByEleves(id);
-            if (commandItem != null)
-            {
-                return Ok(_mapper.Map<ReglementsDTOOutAdmin>(commandItem));
-            }
-            return NotFound();
+            IEnumerable<Reglement> listeReglements = _service.GetReglementsByEleves(idUtilisateur);
+            return _mapper.Map<IEnumerable<ReglementsDTOOutAdmin>>(listeReglements);
         }
 
         [HttpGet("{idReservation}", Name = "GetReglementsByReservations")]
-        public ActionResult<ReglementsDTOOutAdmin> GetReglementByReservations(int id)
+        public IEnumerable<ReglementsDTOOutAdmin> GetReglementByReservations(int idReservation)
         {
-            IEnumerable<Reglement> commandItem = _service.GetReglementsByReservations(id);
-            if (commandItem != null)
-            {
-                return Ok(_mapper.Map<ReglementsDTOOutAdmin>(commandItem));
-            }
-            return NotFound();
+            IEnumerable<Reglement> listeReglements = _service.GetReglementsByReservations(idReservation);
+            return _mapper.Map<IEnumerable<ReglementsDTOOutAdmin>>(listeReglements);
         }
 
         //POST api/Reglements
         [HttpPost]
-        public ActionResult<ReglementsDTOIn> CreateReglement(Reglement obj)
+        public void CreateReglement(Reglement obj)
         {
             _service.AddReglement(obj);
-            return CreatedAtRoute(nameof(GetReglementById), new { Id = obj.IdReglement }, obj);
         }
 
         //POST api/Reglements/{id}
         [HttpPut("{id}")]
-        public ActionResult UpdateReglement(int id, ReglementsDTOIn obj)
+        public bool UpdateReglement(int id, ReglementsDTOIn obj)
         {
             Reglement objFromRepo = _service.GetReglementById(id);
             if (objFromRepo == null)
             {
-                return NotFound();
+                return false;
             }
             _mapper.Map(obj, objFromRepo);
             _service.UpdateReglement(objFromRepo);
-            return NoContent();
-        }
-
-        // Exemple d'appel
-        // [{
-        // "op":"replace",
-        // "path":"",
-        // "value":""
-        // }]
-        //PATCH api/Reglements/{id}
-        [HttpPatch("{id}")]
-        public ActionResult PartialReglementUpdate(int id, JsonPatchDocument<Reglement> patchDoc)
-        {
-            Reglement objFromRepo = _service.GetReglementById(id);
-            if (objFromRepo == null)
-            {
-                return NotFound();
-            }
-            Reglement objToPatch = _mapper.Map<Reglement>(objFromRepo);
-            patchDoc.ApplyTo(objToPatch, ModelState);
-            if (!TryValidateModel(objToPatch))
-            {
-                return ValidationProblem(ModelState);
-            }
-            _mapper.Map(objToPatch, objFromRepo);
-            _service.UpdateReglement(objFromRepo);
-            return NoContent();
+            return true;
         }
 
         //DELETE api/Reglements/{id}
         [HttpDelete("{id}")]
-        public ActionResult DeleteReglement(int id)
+        public bool DeleteReglement(int id)
         {
             Reglement obj = _service.GetReglementById(id);
             if (obj == null)
             {
-                return NotFound();
+                return false;
             }
             _service.DeleteReglement(obj);
-            return NoContent();
+            return true;
         }
 
 

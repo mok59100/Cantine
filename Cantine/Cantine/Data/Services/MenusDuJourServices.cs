@@ -47,9 +47,9 @@ namespace Cantine.Data.Services
         {
             return _context.MenusDuJour.FirstOrDefault(obj => obj.IdMenuDuJour == id);
         }
-        public MenuDuJour GetMenuDuJourByDateDuJour(DateTime DateDuJour)
+        public IEnumerable<MenuDuJour> GetMenusDuJourByDateDuJour(DateTime DateDuJour)
         {
-            return _context.MenusDuJour.FirstOrDefault(obj => obj.DateDuJour == DateDuJour);
+            return _context.MenusDuJour.Where(obj => obj.DateDuJour == DateDuJour).ToList();
         }
 
         public void UpdateMenuDuJour(MenuDuJour obj)
