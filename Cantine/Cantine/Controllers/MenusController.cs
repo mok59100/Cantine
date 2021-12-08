@@ -38,6 +38,12 @@ namespace Cantine.Controllers
             return _mapper.Map<IEnumerable<MenusDTOIn>>(listeMenus);
         }
 
+        public IEnumerable<MenusDTOOutData> GetAllMenusData()
+        {
+            IEnumerable<Menu> listeMenus = _service.GetAllMenus();
+            return _mapper.Map<IEnumerable<MenusDTOOutData>>(listeMenus);
+        }
+
         //GET api/Menus/{i}
         [HttpGet("{id}", Name = "GetMenusById")]
         public MenusDTOIn GetMenusById(int id)
@@ -52,8 +58,9 @@ namespace Cantine.Controllers
 
         //POST api/NomController
         [HttpPost]
-        public void CreateMenus(Menu obj)
+        public void CreateMenus(MenusDTOIn objIn)
         {
+            Menu obj = _mapper.Map<Menu>(objIn);
             _service.AddMenus(obj);
         }
 

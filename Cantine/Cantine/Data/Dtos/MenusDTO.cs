@@ -6,8 +6,19 @@ using System.Threading.Tasks;
 
 namespace Cantine.Data.Dtos
 {
-    class MenusDTOIn
+    public class MenusDTOIn
     {
+        public string LibelleMenu { get; set; }
+        public string Entree { get; set; }
+        public string Plat { get; set; }
+        public string Dessert { get; set; }
+
+        public double Prix { get; set; }
+    }
+
+    public class MenusDTOOutData
+    {
+        public int IdMenu { get; set; }
         public string LibelleMenu { get; set; }
         public string Entree { get; set; }
         public string Plat { get; set; }

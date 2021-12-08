@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
 C:\Users\59011-07-02\Documents\Cantine\Cantine\Cantine\App.xaml
-5341397511
+6-1575660718
 
-502136099936
+51179767015
 339199645268
-Accueil.xaml;Formulaires\FormReservation.xaml;Listes\ListeMenus.xaml;Listes\ListeReservations.xaml;MainWindow.xaml;
+Accueil.xaml;Formulaires\FormMenu.xaml;Formulaires\FormReservation.xaml;Listes\ListeMenus.xaml;Listes\ListeReservations.xaml;MainWindow.xaml;
 
-False
+True
 

@@ -16,8 +16,10 @@ namespace Cantine.Data.Profiles
 
                CreateMap<Menu, MenusDTOIn>();
                CreateMap<MenusDTOIn, Menu>();
-               
-           }
+            CreateMap<Menu, MenusDTOOutData>();
+            CreateMap<MenusDTOOutData, Menu>();
+
+        }
 
 
 

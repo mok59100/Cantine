@@ -1,0 +1,66 @@
+﻿<Window x:Class="Cantine.Formulaires.FormMenu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Cantine.Formulaires"
+        mc:Ignorable="d"
+        Title="FormMenu" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="9*"/>
+            <RowDefinition Height="42*"/>
+            <RowDefinition Height="8*"/>
+            <RowDefinition Height="293*"/>
+            <RowDefinition Height="6*"/>
+            <RowDefinition Height="64*"/>
+            <RowDefinition Height="12*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="33*"/>
+            <ColumnDefinition Width="122*"/>
+            <ColumnDefinition Width="45*"/>
+        </Grid.ColumnDefinitions>
+        <Label x:Name="lblTitre" Content="Titre" Grid.Column="1" Grid.Row="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        
+        <Grid Grid.Column="1" Grid.Row="3" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1.5*"/>
+                <ColumnDefinition Width="0.05*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <Label Content="Libelle du menu :" Grid.Row="0" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
+            <TextBox x:Name="txbLibelle" Grid.Row="0" Grid.Column="2" VerticalContentAlignment="Center"/>
+            <Label Content="Entrée :" Grid.Row="2" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
+            <TextBox x:Name="txbEntree" Grid.Row="2" Grid.Column="2" VerticalContentAlignment="Center"/>
+            <Label Content="Plat : " Grid.Row="4" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
+            <TextBox x:Name="txbPlat" Grid.Row="4" Grid.Column="2" VerticalContentAlignment="Center"/>
+            <Label Content="Dessert :" Grid.Row="6" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
+            <TextBox x:Name="txbDessert" Grid.Row="6" Grid.Column="2" VerticalContentAlignment="Center"/>
+            <Label Content="Prix :" Grid.Row="8" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
+            <TextBox x:Name="txbPrix" Grid.Row="8" Grid.Column="2" VerticalContentAlignment="Center"/>
+        </Grid>
+        <Grid Grid.Column="1" Grid.Row="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="0.1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="btnAnnuler" Content="Annuler" Grid.Column="0" Click="Retour"/>
+            <Button x:Name="btnValider" Content="Valider"  Grid.Column="2"/>
+
+        </Grid>
+
+    </Grid>
+</Window>

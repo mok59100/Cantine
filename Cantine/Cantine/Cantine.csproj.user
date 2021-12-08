@@ -10,6 +10,9 @@
     <Compile Update="Accueil.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Formulaires\FormMenu.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Formulaires\FormReservation.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -22,6 +25,9 @@
   </ItemGroup>
   <ItemGroup>
     <Page Update="Accueil.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Formulaires\FormMenu.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Formulaires\FormReservation.xaml">
