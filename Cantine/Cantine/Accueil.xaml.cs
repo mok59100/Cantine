@@ -10,27 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Cantine
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Logique d'interaction pour Accueil.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Accueil : Window
     {
-        public MainWindow()
+        public Accueil()
         {
             InitializeComponent();
-        }
-
-        private void login(object sender, RoutedEventArgs e)
-        {
-            //Accueil accueil = new Accueil(); 
-            //this.Opacity = 0.7;
-            //accueil.ShowDialog();
-            //this.Opacity = 1;
         }
     }
 }

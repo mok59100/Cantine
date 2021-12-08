@@ -19,4 +19,8 @@
     <PackageReference Include="OpenXmlPowerTools" Version="4.5.3.2" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Formulaires\" />
+    <Folder Include="Listes\" />
+  </ItemGroup>
 </Project>
