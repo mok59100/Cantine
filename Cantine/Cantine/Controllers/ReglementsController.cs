@@ -45,6 +45,28 @@ namespace Cantine.Controllers
             return NotFound();
         }
 
+        [HttpGet("{idUtilisateur}", Name = "GetReglementByEleves")]
+        public ActionResult<ReglementsDTOOutAdmin> GetReglementByEleves(int id)
+        {
+            Reglement commandItem = _service.GetReglementsByEleves(id);
+            if (commandItem != null)
+            {
+                return Ok(_mapper.Map<ReglementsDTOOutAdmin>(commandItem));
+            }
+            return NotFound();
+        }
+
+        [HttpGet("{idReservation}", Name = "GetReglementByReservations")]
+        public ActionResult<ReglementsDTOOutAdmin> GetReglementByReservations(int id)
+        {
+            Reglement commandItem = _service.GetReglementByReservations(id);
+            if (commandItem != null)
+            {
+                return Ok(_mapper.Map<ReglementsDTOOutAdmin>(commandItem));
+            }
+            return NotFound();
+        }
+
         //POST api/Reglements
         [HttpPost]
         public ActionResult<ReglementsDTOIn> CreateReglement(Reglement obj)
