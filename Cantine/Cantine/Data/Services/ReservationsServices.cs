@@ -17,7 +17,7 @@ namespace Cantine.Data.Services
             _context = context;
         }
 
-        public void AddReservations(Reservation obj)
+        public void AddReservation(Reservation obj)
         {
             if (obj == null)
             {
@@ -27,7 +27,7 @@ namespace Cantine.Data.Services
             _context.SaveChanges();
         }
 
-        public void DeleteReservations(Reservation obj)
+        public void DeleteReservation(Reservation obj)
         {
             if (obj == null)
             {
@@ -42,18 +42,22 @@ namespace Cantine.Data.Services
             return _context.Reservations.ToList();
         }
 
-        public Reservation GetReservationsById(int id)
+        public Reservation GetReservationById(int id)
         {
             return _context.Reservations.FirstOrDefault(obj => obj.IdReservation == id);
         }
 
-        public IEnumerable<Reservation> GetReservationsByEleves(int idEleve)
+        public IEnumerable<Reservation> GetReservationsByEleves(int idUtilisateur)
         {
-
-            return _context.Reservations.ToList(o => o.IdEleve==idEleve);
+            return _context.Reservations.Where(o => o.IdUtilisateur == idUtilisateur).ToList();
         }
 
-        public void UpdateReservations(Reservation obj)
+        public IEnumerable<Reservation> GetReservationsByDateRepas(DateTime dateRepas)
+        {
+            return _context.Reservations.Where(o => o.DateRepas == dateRepas).ToList();
+        }
+
+        public void UpdateReservation(Reservation obj)
         {
             _context.SaveChanges();
         }

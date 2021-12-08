@@ -2082,23 +2082,39 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\59011-07-10\\.nuget\\packages\\": {},
+<<<<<<< HEAD
+    "C:\\Users\\59011-07-02\\.nuget\\packages\\": {},
+=======
+    "C:\\Users\\59011-07-03\\.nuget\\packages\\": {},
+>>>>>>> 1fd6844f38809b63845601368cbceaa1a7e2e4ba
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\59011-07-10\\Documents\\Cantine\\Cantine\\Cantine\\Cantine.csproj",
+<<<<<<< HEAD
+      "projectUniqueName": "C:\\Users\\59011-07-02\\Documents\\Cantine\\Cantine\\Cantine\\Cantine.csproj",
       "projectName": "Cantine",
-      "projectPath": "C:\\Users\\59011-07-10\\Documents\\Cantine\\Cantine\\Cantine\\Cantine.csproj",
-      "packagesPath": "C:\\Users\\59011-07-10\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\59011-07-10\\Documents\\Cantine\\Cantine\\Cantine\\obj\\",
+      "projectPath": "C:\\Users\\59011-07-02\\Documents\\Cantine\\Cantine\\Cantine\\Cantine.csproj",
+      "packagesPath": "C:\\Users\\59011-07-02\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\59011-07-02\\Documents\\Cantine\\Cantine\\Cantine\\obj\\",
+=======
+      "projectUniqueName": "C:\\Users\\59011-07-03\\Desktop\\applicationCantine\\Cantine\\Cantine\\Cantine\\Cantine.csproj",
+      "projectName": "Cantine",
+      "projectPath": "C:\\Users\\59011-07-03\\Desktop\\applicationCantine\\Cantine\\Cantine\\Cantine\\Cantine.csproj",
+      "packagesPath": "C:\\Users\\59011-07-03\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\59011-07-03\\Desktop\\applicationCantine\\Cantine\\Cantine\\Cantine\\obj\\",
+>>>>>>> 1fd6844f38809b63845601368cbceaa1a7e2e4ba
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\59011-07-10\\AppData\\Roaming\\NuGet\\NuGet.Config",
+<<<<<<< HEAD
+        "C:\\Users\\59011-07-02\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+        "C:\\Users\\59011-07-03\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> 1fd6844f38809b63845601368cbceaa1a7e2e4ba
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -2182,11 +2198,21 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
       }
     }
   },
   "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+<<<<<<< HEAD
+      "message": "Problème de lecture du fichier cache C:\\Users\\59011-07-02\\Documents\\Cantine\\Cantine\\Cantine\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+=======
+      "message": "Problème de lecture du fichier cache C:\\Users\\59011-07-03\\Desktop\\applicationCantine\\Cantine\\Cantine\\Cantine\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+>>>>>>> 1fd6844f38809b63845601368cbceaa1a7e2e4ba
+    },
     {
       "code": "NU1701",
       "level": "Warning",
