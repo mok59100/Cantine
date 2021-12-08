@@ -26,27 +26,27 @@ namespace Cantine.Controllers
 
         //GET api/Eleves
         [HttpGet]
-        public ActionResult<IEnumerable<ElevesDTO>> GetAllEleves()
+        public ActionResult<IEnumerable<ElevesDTOOut>> GetAllEleves()
         {
             IEnumerable<Eleve> listeEleves = _service.GetAllEleves();
-            return Ok(_mapper.Map<IEnumerable<ElevesDTO>>(listeEleves));
+            return Ok(_mapper.Map<IEnumerable<ElevesDTOOut>>(listeEleves));
         }
 
         //GET api/Eleves/{i}
         [HttpGet("{id}", Name = "GetEleveById")]
-        public ActionResult<ElevesDTO> GetEleveById(int id)
+        public ActionResult<ElevesDTOOut> GetEleveById(int id)
         {
             Eleve commandItem = _service.GetEleveById(id);
             if (commandItem != null)
             {
-                return Ok(_mapper.Map<ElevesDTO>(commandItem));
+                return Ok(_mapper.Map<ElevesDTOOut>(commandItem));
             }
             return NotFound();
         }
 
         //POST api/Eleves
         [HttpPost]
-        public ActionResult<ElevesDTO> CreateEleve(Eleve obj)
+        public ActionResult<ElevesDTOIn> CreateEleve(Eleve obj)
         {
             _service.AddEleve(obj);
             return CreatedAtRoute(nameof(GetEleveById), new { Id = obj.IdUtilisateur}, obj);
@@ -54,7 +54,7 @@ namespace Cantine.Controllers
 
         //POST api/Eleves/{id}
         [HttpPut("{id}")]
-        public ActionResult UpdateEleve(int id, ElevesDTO obj)
+        public ActionResult UpdateEleve(int id, ElevesDTOIn obj)
         {
             Eleve objFromRepo = _service.GetEleveById(id);
             if (objFromRepo == null)
