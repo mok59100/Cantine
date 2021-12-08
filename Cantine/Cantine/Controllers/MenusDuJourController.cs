@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
+using Cantine.Data;
 using Cantine.Data.Dtos;
 using Cantine.Data.Models;
+using Cantine.Data.Profiles;
 using Cantine.Data.Services;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
@@ -18,10 +20,17 @@ namespace Cantine.Controllers
         private readonly MenusDuJourServices _service;
         private readonly IMapper _mapper;
 
-        public MenusDuJourController(MenusDuJourServices service, IMapper mapper)
+        public MenusDuJourController(CantineContext _context)
         {
-            _service = service;
-            _mapper = mapper;
+            _service = new MenusDuJourServices(_context);
+
+            var config = new MapperConfiguration(cfg =>
+            {
+                cfg.AddProfile<MenusDuJourProfile>();
+                cfg.AddProfile<MenusProfile>();
+
+            });
+            _mapper = config.CreateMapper();
         }
 
         //GET api/MenusDuJour

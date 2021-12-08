@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
+using Cantine.Data;
 using Cantine.Data.Dtos;
 using Cantine.Data.Models;
+using Cantine.Data.Profiles;
 using Cantine.Data.Services;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -17,10 +19,18 @@ namespace Cantine.Controllers
         private readonly ReservationsServices _service;
         private readonly IMapper _mapper;
 
-        public ReservationsController(ReservationsServices service, IMapper mapper)
+        public ReservationsController(CantineContext _context)
         {
-            _service = service;
-            _mapper = mapper;
+            _service = new ReservationsServices(_context);
+
+            var config = new MapperConfiguration(cfg =>
+            {
+                
+                cfg.AddProfile<ReservationsProfile>();
+                cfg.AddProfile<ElevesProfile>();
+
+            });
+            _mapper = config.CreateMapper();
         }
 
         //GET api/Reservations
