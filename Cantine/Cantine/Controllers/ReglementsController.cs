@@ -45,7 +45,7 @@ namespace Cantine.Controllers
             return NotFound();
         }
 
-        [HttpGet("{idUtilisateur}", Name = "GetReglementByEleves")]
+        [HttpGet("{idUtilisateur}", Name = "GetReglementsByEleves")]
         public ActionResult<ReglementsDTOOutAdmin> GetReglementByEleves(int id)
         {
             IEnumerable<Reglement> commandItem = _service.GetReglementsByEleves(id);
@@ -56,7 +56,7 @@ namespace Cantine.Controllers
             return NotFound();
         }
 
-        [HttpGet("{idReservation}", Name = "GetReglementByReservations")]
+        [HttpGet("{idReservation}", Name = "GetReglementsByReservations")]
         public ActionResult<ReglementsDTOOutAdmin> GetReglementByReservations(int id)
         {
             IEnumerable<Reglement> commandItem = _service.GetReglementsByReservations(id);
