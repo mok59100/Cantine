@@ -13,7 +13,7 @@ namespace Cantine.Data.Dtos
         public string Nom { get; set; }
         public string Prenom { get; set; }
         public string Classe { get; set; }
-        public DateTime? DateNaissance { get; set; }
+        public DateTime DateNaissance { get; set; }
         public string Adresse { get; set; }
         public string Mail { get; set; }
        
