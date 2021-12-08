@@ -27,10 +27,10 @@ namespace Cantine
 
         private void login(object sender, RoutedEventArgs e)
         {
-            //Accueil accueil = new Accueil(); 
-            //this.Opacity = 0.7;
-            //accueil.ShowDialog();
-            //this.Opacity = 1;
+            Accueil accueil = new Accueil(); 
+            this.Opacity = 0.7;
+            accueil.ShowDialog();
+            this.Opacity = 1;
         }
     }
 }

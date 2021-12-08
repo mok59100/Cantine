@@ -1,5 +1,4 @@
-﻿using Cantine.Data.Dtos;
-using Cantine.Data.Models;
+﻿using Cantine.Data.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +17,7 @@ namespace Cantine.Data.Services
             _context = context;
         }
 
-        public void AddTypePaiement(TypePaiement obj)
+        public void AddTypePaiements(TypePaiement obj)
         {
             if (obj == null)
             {
@@ -28,7 +27,7 @@ namespace Cantine.Data.Services
             _context.SaveChanges();
         }
 
-        public void DeleteTypePaiement(TypePaiement obj)
+        public void DeleteTypePaiements(TypePaiement obj)
         {
             if (obj == null)
             {
@@ -38,17 +37,17 @@ namespace Cantine.Data.Services
             _context.SaveChanges();
         }
 
-        public IEnumerable<TypePaiement> GetAllTypesPaiements()
+        public IEnumerable<TypePaiement> GetAllTypePaiements()
         {
             return _context.TypesPaiements.ToList();
         }
 
-        public TypePaiement GetTypePaiementById(int idTypePaiement)
+        public TypePaiement GetTypePaiementsById(int id)
         {
-            return _context.TypesPaiements.FirstOrDefault(obj => obj.IdTypePaiement == idTypePaiement);
+            return _context.TypesPaiements.FirstOrDefault(obj => obj.IdTypePaiement == id);
         }
 
-        public void UpdateTypePaiement(TypePaiement obj)
+        public void UpdateTypePaiements(TypePaiement obj)
         {
             _context.SaveChanges();
         }

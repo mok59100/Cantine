@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\59011-07-02\Documents\Cantine\Cantine\Cantine\obj\Debug\net5.0-windows\
+C:\Users\59011-07-10\Documents\Cantine\Cantine\Cantine\obj\Debug\net5.0-windows\
 Cantine
 none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
-C:\Users\59011-07-02\Documents\Cantine\Cantine\Cantine\App.xaml
-2-1505119544
+C:\Users\59011-07-10\Documents\Cantine\Cantine\Cantine\App.xaml
+4-229440274
 
-47667887492
-339199645268
-Accueil.xaml;MainWindow.xaml;
+491930564242
+33984148985
+Accueil.xaml;Formulaires\FormEleve.xaml;Listes\ListeEleves.xaml;MainWindow.xaml;
 
-False
+True
 

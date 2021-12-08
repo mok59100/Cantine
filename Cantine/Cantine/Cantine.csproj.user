@@ -10,9 +10,21 @@
     <Compile Update="Accueil.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Formulaires\FormEleve.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Listes\ListeEleves.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="Accueil.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Formulaires\FormEleve.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Listes\ListeEleves.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">
