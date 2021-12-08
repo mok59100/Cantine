@@ -52,7 +52,7 @@ namespace Cantine.Data.Services
             return _context.Reglements.Where(o => o.IdUtilisateur == id).ToList();
         }
 
-        public IEnumerable<Reglement> GetReglementByReservations(int id)
+        public IEnumerable<Reglement> GetReglementsByReservations(int id)
         {
             return _context.Reglements.Where(o => o.IdReservation == id).ToList();
         }

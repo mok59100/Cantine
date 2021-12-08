@@ -48,7 +48,7 @@ namespace Cantine.Controllers
         [HttpGet("{idUtilisateur}", Name = "GetReglementByEleves")]
         public ActionResult<ReglementsDTOOutAdmin> GetReglementByEleves(int id)
         {
-            Reglement commandItem = _service.GetReglementsByEleves(id);
+            IEnumerable<Reglement> commandItem = _service.GetReglementsByEleves(id);
             if (commandItem != null)
             {
                 return Ok(_mapper.Map<ReglementsDTOOutAdmin>(commandItem));
@@ -59,7 +59,7 @@ namespace Cantine.Controllers
         [HttpGet("{idReservation}", Name = "GetReglementByReservations")]
         public ActionResult<ReglementsDTOOutAdmin> GetReglementByReservations(int id)
         {
-            Reglement commandItem = _service.GetReglementByReservations(id);
+            IEnumerable<Reglement> commandItem = _service.GetReglementsByReservations(id);
             if (commandItem != null)
             {
                 return Ok(_mapper.Map<ReglementsDTOOutAdmin>(commandItem));
