@@ -42,7 +42,7 @@ namespace Cantine
                     window = new ListeMenus();
                     break;
                 case "btn_MenusDuJour":
-                    //window = new ListeMenusDuJour();
+                    window = new ListeMenusDuJour();
                     break;
                 case "btn_Eleves":
                     //window = new ListeEleves();

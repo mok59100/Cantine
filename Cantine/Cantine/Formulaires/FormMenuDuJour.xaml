@@ -1,0 +1,78 @@
+﻿<Window x:Class="Cantine.Formulaires.FormMenuDuJour"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Cantine.Formulaires"
+        mc:Ignorable="d"
+        Title="FormMenuDuJour" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="67*"/>
+            <ColumnDefinition Width="181*"/>
+            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition Width="475*"/>
+            <ColumnDefinition Width="67*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="6*"/>
+            <RowDefinition Height="27*"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="34*"/>
+            <RowDefinition Height="7*"/>
+            <RowDefinition Height="282*"/>
+            <RowDefinition Height="9*"/>
+            <RowDefinition Height="60*"/>
+            <RowDefinition Height="5*"/>
+        </Grid.RowDefinitions>
+        <Label x:Name="labTitre" Content="Titre" Grid.Column="1" Grid.Row="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.ColumnSpan="3"/>
+        <Label Content="Date du Repas :" Grid.Column="1" Grid.Row="3" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
+        <DatePicker x:Name="dpDateDuJour" Grid.Column="3" Grid.Row="3" />
+        <Grid Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="113*"/>
+                <ColumnDefinition Width="164*"/>
+                <ColumnDefinition Width="12*"/>
+                <ColumnDefinition Width="183*"/>
+                <ColumnDefinition Width="8*"/>
+                <ColumnDefinition Width="99*"/>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="83*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="26*"/>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="101*"/>
+                <RowDefinition Height="36*"/>
+                <RowDefinition Height="114*"/>
+            </Grid.RowDefinitions>
+            <Label Content="Selection du menu :" Grid.Column="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <ComboBox x:Name="cbMenus"  Grid.Column="3"/>
+            <Button x:Name="btnAjouterMenu" Content="Ajouter" Grid.Column="5"/>
+            <DataGrid x:Name="ListeMenusMenuDuJour" Grid.Row="2" Grid.RowSpan="3" Grid.ColumnSpan="6">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="IdMenu" Binding="{Binding IdMenu}" Visibility="Hidden"/>
+                    <DataGridTextColumn Header="Libelle du menu" Binding="{Binding LibelleMenu}" Width="2*"/>
+                    <DataGridTextColumn Header="Entree" Width="2*" Binding="{Binding Entree}"/>
+                    <DataGridTextColumn Header="Plat" Width="2*" Binding="{Binding Plat}"/>
+                    <DataGridTextColumn Header="Dessert" Width="2*" Binding="{Binding Dessert}"/>
+                    <DataGridTextColumn Header="Prix" Width="1*" Binding="{Binding Prix}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <Button x:Name="btnSupprimerMenu"  Content="Supprimer" Grid.Column="7" Grid.Row="3"/>
+        </Grid>
+        <Grid Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="7">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="0.5*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="btnAnnuler" Content="Annuler" Grid.Column="1"/>
+            <Button x:Name="btnValider" Content="Valider" Grid.Column="3"/>
+
+        </Grid>
+
+    </Grid>
+</Window>

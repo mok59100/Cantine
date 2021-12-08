@@ -41,6 +41,11 @@ namespace Cantine.Controllers
             return _mapper.Map<IEnumerable<MenusDuJourDTOOut>>(listeMenusDuJour);
         }
 
+        public IEnumerable<MenuDuJour> GetAllMenusDuJourModel()
+        {
+            return _service.GetAllMenusDuJour();
+        }
+
         public IEnumerable<MenusDuJourDTOOut> GetMenusDuJourByDateDuJour(DateTime DateDuJour)
         {
             IEnumerable<MenuDuJour> listeMenusDuJour = _service.GetMenusDuJourByDateDuJour(DateDuJour);

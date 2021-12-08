@@ -13,7 +13,13 @@
     <Compile Update="Formulaires\FormMenu.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Formulaires\FormMenuDuJour.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Formulaires\FormReservation.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Listes\ListeMenusDuJour.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Listes\ListeReservations.xaml.cs">
@@ -30,7 +36,13 @@
     <Page Update="Formulaires\FormMenu.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Formulaires\FormMenuDuJour.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Formulaires\FormReservation.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Listes\ListeMenusDuJour.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Listes\ListeReservations.xaml">
