@@ -33,7 +33,7 @@ namespace Cantine.Controllers
         [HttpGet]
         public IEnumerable<TypesPaiementsDTOIn> GetAllTypesPaiements()
         {
-            IEnumerable<TypePaiement> listeTypesPaiements = _service.GetAllTypesPaiements();
+            IEnumerable<TypePaiement> listeTypesPaiements = _service.GetAllTypePaiements();
             return _mapper.Map<IEnumerable<TypesPaiementsDTOIn>>(listeTypesPaiements);
         }
 
@@ -41,7 +41,7 @@ namespace Cantine.Controllers
         [HttpGet("{id}", Name = "GetTypePaiementById")]
         public TypesPaiementsDTOIn GetTypePaiementById(int id)
         {
-            TypePaiement commandItem = _service.GetTypePaiementById(id);
+            TypePaiement commandItem = _service.GetTypePaiementsById(id);
             if (commandItem != null)
             {
                 return _mapper.Map<TypesPaiementsDTOIn>(commandItem);
@@ -53,20 +53,20 @@ namespace Cantine.Controllers
         [HttpPost]
         public void CreateTypePaiement(TypePaiement obj)
         {
-            _service.AddTypePaiement(obj);  
+            _service.AddTypePaiements(obj);  
         }
 
         //POST api/TypesPaiements/{id}
         [HttpPut("{id}")]
         public bool  UpdateTypePaiement(int id, TypesPaiementsDTOIn obj)
         {
-            TypePaiement objFromRepo = _service.GetTypePaiementById(id);
+            TypePaiement objFromRepo = _service.GetTypePaiementsById(id);
             if (objFromRepo == null)
             {
                 return false;
             }
             _mapper.Map(obj, objFromRepo);
-            _service.UpdateTypePaiement(objFromRepo);
+            _service.UpdateTypePaiements(objFromRepo);
             return true;
         }
 
@@ -75,12 +75,12 @@ namespace Cantine.Controllers
         [HttpDelete("{id}")]
         public bool DeleteTypePaiement(int id)
         {
-            TypePaiement obj = _service.GetTypePaiementById(id);
+            TypePaiement obj = _service.GetTypePaiementsById(id);
             if (obj == null)
             {
                 return false;
             }
-            _service.DeleteTypePaiement(obj);
+            _service.DeleteTypePaiements(obj);
             return true;
         }
 

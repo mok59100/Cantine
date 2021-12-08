@@ -23,9 +23,8 @@ namespace Cantine.Controllers
         public ElevesController(CantineContext _context)
         {
             _service = new ElevesServices(_context);
-
             var config = new MapperConfiguration(cfg =>
-            {             
+            {
                 cfg.AddProfile<ElevesProfile>();
 
             });
@@ -54,8 +53,9 @@ namespace Cantine.Controllers
 
         //POST api/Eleves
         [HttpPost]
-        public void CreateEleve(Eleve obj)
+        public void CreateEleve(ElevesDTOIn objIn)
         {
+            Eleve obj = _mapper.Map<Eleve>(objIn);
             _service.AddEleve(obj);
             
         }
