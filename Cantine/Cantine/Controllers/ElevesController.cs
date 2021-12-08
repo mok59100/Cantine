@@ -26,20 +26,20 @@ namespace Cantine.Controllers
 
         //GET api/Eleves
         [HttpGet]
-        public ActionResult<IEnumerable<ElevesDTOIn>> GetAllEleves()
+        public ActionResult<IEnumerable<ElevesDTOOut>> GetAllEleves()
         {
             IEnumerable<Eleve> listeEleves = _service.GetAllEleves();
-            return Ok(_mapper.Map<IEnumerable<ElevesDTOIn>>(listeEleves));
+            return Ok(_mapper.Map<IEnumerable<ElevesDTOOut>>(listeEleves));
         }
 
         //GET api/Eleves/{i}
         [HttpGet("{id}", Name = "GetEleveById")]
-        public ActionResult<ElevesDTOIn> GetEleveById(int id)
+        public ActionResult<ElevesDTOOut> GetEleveById(int id)
         {
             Eleve commandItem = _service.GetEleveById(id);
             if (commandItem != null)
             {
-                return Ok(_mapper.Map<ElevesDTOIn>(commandItem));
+                return Ok(_mapper.Map<ElevesDTOOut>(commandItem));
             }
             return NotFound();
         }
