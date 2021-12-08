@@ -1,7 +1,6 @@
 {
   "format": 1,
   "restore": {
-<<<<<<< HEAD
     "C:\\Users\\59011-07-02\\Documents\\Cantine\\Cantine\\Cantine\\Cantine.csproj": {}
   },
   "projects": {
@@ -13,29 +12,12 @@
         "projectPath": "C:\\Users\\59011-07-02\\Documents\\Cantine\\Cantine\\Cantine\\Cantine.csproj",
         "packagesPath": "C:\\Users\\59011-07-02\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\59011-07-02\\Documents\\Cantine\\Cantine\\Cantine\\obj\\",
-=======
-    "C:\\Users\\59011-07-03\\Documents\\Cantine\\Cantine\\Cantine\\Cantine.csproj": {}
-  },
-  "projects": {
-    "C:\\Users\\59011-07-03\\Documents\\Cantine\\Cantine\\Cantine\\Cantine.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\59011-07-03\\Documents\\Cantine\\Cantine\\Cantine\\Cantine.csproj",
-        "projectName": "Cantine",
-        "projectPath": "C:\\Users\\59011-07-03\\Documents\\Cantine\\Cantine\\Cantine\\Cantine.csproj",
-        "packagesPath": "C:\\Users\\59011-07-03\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\59011-07-03\\Documents\\Cantine\\Cantine\\Cantine\\obj\\",
->>>>>>> 4564c0439d2ca51ca3b3acfa8e049f743aa5dbb0
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-<<<<<<< HEAD
           "C:\\Users\\59011-07-02\\AppData\\Roaming\\NuGet\\NuGet.Config",
-=======
-          "C:\\Users\\59011-07-03\\AppData\\Roaming\\NuGet\\NuGet.Config",
->>>>>>> 4564c0439d2ca51ca3b3acfa8e049f743aa5dbb0
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

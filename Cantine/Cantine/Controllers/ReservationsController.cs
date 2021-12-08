@@ -43,6 +43,18 @@ namespace Cantine.Controllers
             return null;
         }
 
+        public IEnumerable<ReservationsDTOOutAdmin> GetReservationsByEleves(int idUtilisateur)
+        {
+            IEnumerable<Reservation> listeReservations = _service.GetReservationsByEleves(idUtilisateur);
+            return _mapper.Map<IEnumerable<ReservationsDTOOutAdmin>>(listeReservations);
+        }
+
+        public IEnumerable<ReservationsDTOOutAdmin> GetReservationsByDateRepas(DateTime dateRepas)
+        {
+            IEnumerable<Reservation> listeReservations = _service.GetReservationsByDateRepas(dateRepas);
+            return _mapper.Map<IEnumerable<ReservationsDTOOutAdmin>>(listeReservations);
+        }
+
         //POST api/Reservations
         [HttpPost]
         public void CreateReservation(ReservationsDTOIn objIn)
