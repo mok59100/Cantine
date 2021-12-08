@@ -5,17 +5,48 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Cantine"
         mc:Ignorable="d"
-        Title="Accueil" Height="450" Width="800">
+        Title="Accueil" Height="450" Width="950">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="352*"/>
+            <ColumnDefinition Width="207*"/>
+            <ColumnDefinition Width="391*"/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="2*"/>
-            <RowDefinition Height="0.05*"/>
-            <RowDefinition Height="1*"/>
+            <RowDefinition Height="107*"/>
+            <RowDefinition Height="215*"/>
+            <RowDefinition Height="33*"/>
+            <RowDefinition Height="49*"/>
+            <RowDefinition Height="30*"/>
         </Grid.RowDefinitions>
-        <Grid Grid.Row="1">
-            
+        <Grid Grid.ColumnSpan="3" Margin="0,107,0,0" Grid.RowSpan="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="0.1*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.5*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="0.1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="0.1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="0.1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="0.5*"/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="btn_Menus" Content="Gestion des menus" Grid.Column="1" Click="RedirectionVersListe"/>
+            <Button x:Name="btn_MenusDuJour" Content="Gestion des menus du jour" Grid.Column="3" Click="RedirectionVersListe"/>
+            <Button x:Name="btn_Eleves" Content="Gestion des élèves" Grid.Column="5" Click="RedirectionVersListe"/>
+            <Button x:Name="btn_Utilisateurs" Content="Gestion des utilisateurs" Grid.Column="7" Click="RedirectionVersListe"/>
+            <Button x:Name="btn_Reservations" Content="Gestion des réservations" Grid.Column="1" Grid.Row="3" Click="RedirectionVersListe"/>
+            <Button x:Name="btn_ReservationsMenus" Content="Gestion des réservations menu" Grid.Column="3" Grid.Row="3" Click="RedirectionVersListe"/>
+            <Button x:Name="btn_Reglements" Content="Gestion des réglements" Grid.Column="5" Grid.Row="3" Click="RedirectionVersListe"/>
+            <Button x:Name="btn_TypesPaiements" Content="Gestion des types de paiements" Grid.Column="7" Grid.Row="3" Click="RedirectionVersListe"/>
+
         </Grid>
+        <Button x:Name="btn_Deconnexion" Content="Déconnexion" Grid.Column="1" Grid.Row="3" Click="Deconnexion"/>
 
 
     </Grid>
