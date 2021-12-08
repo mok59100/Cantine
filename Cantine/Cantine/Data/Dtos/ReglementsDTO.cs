@@ -12,9 +12,9 @@ namespace Cantine.Data.Dtos
         public partial class ReglementsDTOIn
         {
          
-            public int? IdUtilisateur { get; set; }
-            public int? IdReservation { get; set; }
-            public int? IdTypePaiement { get; set; }           
+            public int IdUtilisateur { get; set; }
+            public int IdReservation { get; set; }
+            public int IdTypePaiement { get; set; }           
             public DateTime DateReglement { get; set; }
         }
 
