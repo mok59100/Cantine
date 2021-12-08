@@ -38,7 +38,7 @@ namespace Cantine.Data.Services
             _context.SaveChanges();
         }
 
-        public IEnumerable<MenuDuJour> GetAllMenuDuJour()
+        public IEnumerable<MenuDuJour> GetAllMenusDuJour()
         {
             return _context.MenusDuJour.ToList();
         }

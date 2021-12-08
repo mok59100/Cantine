@@ -1,4 +1,9 @@
-﻿using System;
+﻿using AutoMapper;
+using Cantine.Data.Dtos;
+using Cantine.Data.Models;
+using Cantine.Data.Services;
+using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,96 +11,71 @@ using System.Threading.Tasks;
 
 namespace Cantine.Controllers
 {
-    class TypesPaiementsController
+    class TypesPaiementsController: ControllerBase
     {
-        private readonly NomControllerServices _service;
+
+        private readonly TypesPaiementsServices _service;
         private readonly IMapper _mapper;
 
-        public NomControllerControler(NomControllerServices service, IMapper mapper)
+        public TypesPaiementsController(TypesPaiementsServices service, IMapper mapper)
         {
             _service = service;
             _mapper = mapper;
         }
 
-        //GET api/NomController
+        //GET api/TypesPaiements
         [HttpGet]
-        public ActionResult<IEnumerable<NomControllerDTO>> GetAllNomController()
+        public IEnumerable<TypesPaiementsDTOIn> GetAllTypesPaiements()
         {
-            IEnumerable<NomModel> listeNomController = _service.GetAllNomController();
-            return Ok(_mapper.Map<IEnumerable<NomControllerDTO>>(listeNomController));
+            IEnumerable<TypePaiement> listeTypesPaiements = _service.GetAllTypesPaiements();
+            return _mapper.Map<IEnumerable<TypesPaiementsDTOIn>>(listeTypesPaiements);
         }
 
-        //GET api/NomController/{i}
-        [HttpGet("{id}", Name = "GetNomModelById")]
-        public ActionResult<NomControllerDTO> GetNomModelById(int id)
+        //GET api/TypesPaiements/{i}
+        [HttpGet("{id}", Name = "GetTypePaiementById")]
+        public TypesPaiementsDTOIn GetTypePaiementById(int id)
         {
-            NomModel commandItem = _service.GetNomModelById(id);
+            TypePaiement commandItem = _service.GetTypePaiementById(id);
             if (commandItem != null)
             {
-                return Ok(_mapper.Map<NomControllerDTO>(commandItem));
+                return _mapper.Map<TypesPaiementsDTOIn>(commandItem);
             }
-            return NotFound();
+            return null;
         }
 
-        //POST api/NomController
+        //POST api/TypesPaiements
         [HttpPost]
-        public ActionResult<NomControllerDTO> CreateNomModel(NomModel obj)
+        public void CreateTypePaiement(TypePaiement obj)
         {
-            _service.AddNomModel(obj);
-            return CreatedAtRoute(nameof(GetNomModelById), new { Id = obj.Id }, obj);
+            _service.AddTypePaiement(obj);  
         }
 
-        //POST api/NomController/{id}
+        //POST api/TypesPaiements/{id}
         [HttpPut("{id}")]
-        public ActionResult UpdateNomModel(int id, NomControllerDTO obj)
+        public bool  UpdateTypePaiement(int id, TypesPaiementsDTOIn obj)
         {
-            NomModel objFromRepo = _service.GetNomModelById(id);
+            TypePaiement objFromRepo = _service.GetTypePaiementById(id);
             if (objFromRepo == null)
             {
-                return NotFound();
+                return false;
             }
             _mapper.Map(obj, objFromRepo);
-            _service.UpdateNomModel(objFromRepo);
-            return NoContent();
+            _service.UpdateTypePaiement(objFromRepo);
+            return true;
         }
 
-        // Exemple d'appel
-        // [{
-        // "op":"replace",
-        // "path":"",
-        // "value":""
-        // }]
-        //PATCH api/NomController/{id}
-        [HttpPatch("{id}")]
-        public ActionResult PartialNomModelUpdate(int id, JsonPatchDocument<NomModel> patchDoc)
-        {
-            NomModel objFromRepo = _service.GetNomModelById(id);
-            if (objFromRepo == null)
-            {
-                return NotFound();
-            }
-            NomModel objToPatch = _mapper.Map<NomModel>(objFromRepo);
-            patchDoc.ApplyTo(objToPatch, ModelState);
-            if (!TryValidateModel(objToPatch))
-            {
-                return ValidationProblem(ModelState);
-            }
-            _mapper.Map(objToPatch, objFromRepo);
-            _service.UpdateNomModel(objFromRepo);
-            return NoContent();
-        }
 
-        //DELETE api/NomController/{id}
+        //DELETE api/TypesPaiements/{id}
         [HttpDelete("{id}")]
-        public ActionResult DeleteNomModel(int id)
+        public bool DeleteTypePaiement(int id)
         {
-            NomModel obj = _service.GetNomModelById(id);
+            TypePaiement obj = _service.GetTypePaiementById(id);
             if (obj == null)
             {
-                return NotFound();
+                return false;
             }
-            _service.DeleteNomModel(obj);
-            return NoContent();
+            _service.DeleteTypePaiement(obj);
+            return true;
         }
 
 
