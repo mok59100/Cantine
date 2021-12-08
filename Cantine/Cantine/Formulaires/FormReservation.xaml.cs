@@ -23,5 +23,10 @@ namespace Cantine.Formulaires
         {
             InitializeComponent();
         }
+
+        private void Retour(object sender, RoutedEventArgs e)
+        {
+            
+        }
     }
 }

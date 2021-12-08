@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Cantine.Controllers;
+using Cantine.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +21,24 @@ namespace Cantine.Listes
     /// </summary>
     public partial class ListeMenus : Window
     {
+        CantineContext _context;
+        MenusController _menuController;
         public ListeMenus()
         {
             InitializeComponent();
+            _context = new CantineContext();
+            //_menuController = new MenusController(_context);
+            ListeMenu.ItemsSource = _menuController.GetAllMenus();
+        }
+
+        private void RedirectionFormulaire(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Retour(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

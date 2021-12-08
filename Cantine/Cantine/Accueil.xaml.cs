@@ -51,7 +51,7 @@ namespace Cantine
                     //window = new ListeUtilisateurs();
                     break;
                 case "btn_Reservations":
-                    //window = new ListeReservations();
+                    window = new ListeReservations();
                     break;
                 case "btn_ReservationsMenus":
                     //window = new ListeReservationsMenus();
