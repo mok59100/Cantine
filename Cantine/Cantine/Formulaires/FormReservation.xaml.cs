@@ -10,27 +10,23 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Cantine
+namespace Cantine.Formulaires
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Logique d'interaction pour FormReservation.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class FormReservation : Window
     {
-        public MainWindow()
+        public FormReservation()
         {
             InitializeComponent();
         }
 
-        private void login(object sender, RoutedEventArgs e)
+        private void Retour(object sender, RoutedEventArgs e)
         {
-            Accueil accueil = new Accueil();
-            this.Visibility = Visibility.Hidden;
-            accueil.ShowDialog();
-            this.Visibility = Visibility.Visible;
+            
         }
     }
 }

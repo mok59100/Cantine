@@ -10,10 +10,16 @@
     <Compile Update="Accueil.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Formulaires\FormEleve.xaml.cs">
+    <Compile Update="Formulaires\FormMenu.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Listes\ListeEleves.xaml.cs">
+    <Compile Update="Formulaires\FormReservation.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Listes\ListeReservations.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Listes\ListeMenus.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -21,10 +27,16 @@
     <Page Update="Accueil.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Formulaires\FormEleve.xaml">
+    <Page Update="Formulaires\FormMenu.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Listes\ListeEleves.xaml">
+    <Page Update="Formulaires\FormReservation.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Listes\ListeReservations.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Listes\ListeMenus.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">

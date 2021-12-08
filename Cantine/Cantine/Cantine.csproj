@@ -19,7 +19,10 @@
     <PackageReference Include="OpenXmlPowerTools" Version="4.5.3.2" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
   </ItemGroup>
+<<<<<<< HEAD
   <ItemGroup>
     <Folder Include="Listes\" />
   </ItemGroup>
+=======
+>>>>>>> 9b4d118dbad23fcd10e91200b6f127f8e02a6470
 </Project>
